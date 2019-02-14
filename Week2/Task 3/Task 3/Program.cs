@@ -9,25 +9,25 @@ namespace Task_3
 {
     class Program
     {
-        static void Main(string[] args)
+        static void PrintInfo(FileSystemInfo fsi, int k) //creating function, that write in console all the files and directories that are located in ​string path​
         {
-            DirectoryInfo dir = new DirectoryInfo(@"C:\Users\Laura\source");
-            PrintInfo(dir, 0);
-        }
+            string s = new string(' ', k); 
+            Console.WriteLine(s + fsi.Name); 
 
-        static void PrintInfo(FileSystemInfo fsi, int k)
-        {
-            string s = new string(' ', k);
-            Console.WriteLine(s + fsi.Name);
-
-            if (fsi.GetType() == typeof(DirectoryInfo))
+            if (fsi.GetType() == typeof(DirectoryInfo)) //if we get info from folder
             {
-                FileSystemInfo[] arr = ((DirectoryInfo)fsi).GetFileSystemInfos();
-                for (int i = 0; i < arr.Length; ++i)
+                FileSystemInfo[] arr = ((DirectoryInfo)fsi).GetFileSystemInfos(); //array, which contain directories
+                for (int i = 0; i < arr.Length; ++i) //run over array
                 {
-                    PrintInfo(arr[i], k + 3);
+                    PrintInfo(arr[i], k + 3); //output every directory
                 }
             }
         }
+
+        static void Main(string[] args)
+        {
+            DirectoryInfo dir = new DirectoryInfo(@"C:\Users\Laura\source"); //method for creating, moving, and enumerating through directories
+            PrintInfo(dir, 0);
+        }       
     }
 }

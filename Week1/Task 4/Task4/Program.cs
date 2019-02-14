@@ -10,14 +10,14 @@ namespace Task_4
     {
         static void Main(string[] args)
         {
-            int n = Int32.Parse(Console.ReadLine());
-            for (int i = 1; i <= n; i++)
+            int n = Int32.Parse(Console.ReadLine()); //input size of array
+            for (int i = 1; i <= n; i++) //array
             {
-                for (int j = 1; j <= i; j++)
+                for (int j = 1; j <= i; j++) //2d array
                 {
-                    Console.Write("[*]");
+                    Console.Write("[*]"); //writing stars
                 }
-                Console.WriteLine();
+                Console.WriteLine(); //writing enter
             }
         }
     }

@@ -11,12 +11,12 @@ namespace Task_4
     {
         static void Main(string[] args)
         {
-            FileStream fs = File.Create(@"C:\Users\Laura\source\TestFile.txt");
-            fs.Close();
-            File.Copy(@"C:\Users\Laura\source\TestFile.txt", @"C:\Users\Laura\source\repos\TestFile.txt", true);
-            StreamWriter file = new StreamWriter(@"C:\Users\Laura\source\TestFile.txt");
-            file.Close();
-            File.Delete(@"C:\Users\Laura\source\TestFile.txt");
+            FileStream fs = File.Create(@"C:\Users\Laura\source\TestFile.txt"); //creating file
+            fs.Close(); //closeing this file
+            File.Copy(@"C:\Users\Laura\source\TestFile.txt", @"C:\Users\Laura\source\repos\TestFile.txt", true); //copying this file
+            StreamWriter file = new StreamWriter(@"C:\Users\Laura\source\TestFile.txt"); //initializing a new file
+            file.Close(); //closing this file
+            File.Delete(@"C:\Users\Laura\source\TestFile.txt"); //deleting original file
         }
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 
-
 namespace Task_1
 {
     class Layer
@@ -46,12 +45,9 @@ namespace Task_1
                 Console.Write(j + ". "); // визуальный счетчик 
                 j++;
                 Console.WriteLine(Content[i].Name); // вывод файлов и директории на консоль  
-
             }
-
         }
     }
-
 
     enum ViewMode // создаем енумерэйтор  
     {
@@ -80,9 +76,9 @@ namespace Task_1
             {
                 if (viewMode == ViewMode.ShowDirContent) // если включен режим прсомотра директории 
                 {
-                    try  // обрабатываем исключение про которое сказал ассистент 
+                    try  // обрабатываем исключение про которое сказал Байсаков
                     {
-                        history.Peek().Draw();  // пытаемся вызвать стек 
+                        history.Peek().Draw();  // пытаемся вызвать стэк
                     }
                     catch { Environment.Exit(0); } // закрываем консоль при обнаружении исключения 
 
@@ -209,9 +205,7 @@ namespace Task_1
 
                                     Console.WriteLine(sr.ReadToEnd()); // вывести весь текст 
                                 }
-
                             }
-
                         }
 
                         break;
@@ -239,11 +233,7 @@ namespace Task_1
                         esc = true;
                         break;
                 }
-
             }
-
         }
-
     }
-
 }
