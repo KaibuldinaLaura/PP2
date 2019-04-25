@@ -34,7 +34,6 @@ namespace Task_2
                         file.Write(n+" "); //write it in our output file
                     }
                 }
-
             }
             string line = sr.ReadLine(); //read output file
             sr.Close(); //close it

@@ -19,7 +19,7 @@ namespace Task_3
                 FileSystemInfo[] arr = ((DirectoryInfo)fsi).GetFileSystemInfos(); //array, which contain directories
                 for (int i = 0; i < arr.Length; ++i) //run over array
                 {
-                    PrintInfo(arr[i], k + 3); //output every directory
+                    PrintInfo(arr[i], k + 4); //output every directory
                 }
             }
         }

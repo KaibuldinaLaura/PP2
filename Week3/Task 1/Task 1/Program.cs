@@ -27,20 +27,20 @@ namespace Task_1
 
             for (int i = 0; i < Content.Length; ++i) // отрисовка курсора, файла и папок 
             {
-                if (i == SelectedItem) // отрисовка курсора 
+                if (i == SelectedItem) // если курсор наведен
                 {
-                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.BackgroundColor = ConsoleColor.Red; // то красим фон в красный
                 }
                 else
                 {
-                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.BackgroundColor = ConsoleColor.Black; // в другом случае красим в черный
                 }
 
-                if (Content[i].GetType() == typeof(DirectoryInfo)) // если это директория подствечиваем белым 
+                if (Content[i].GetType() == typeof(DirectoryInfo)) // если это директория
                 {
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Yellow; // красим названия в желтый
                 }
-                else Console.ForegroundColor = ConsoleColor.Yellow; // в другом случае желтым 
+                else Console.ForegroundColor = ConsoleColor.White; // в другом случае белым
 
                 Console.Write(j + ". "); // визуальный счетчик 
                 j++;
@@ -65,7 +65,7 @@ namespace Task_1
             history.Push(               // добавить контент в стэк 
                 new Layer
                 {
-                    Content = dir.GetFileSystemInfos()
+                    Content = dir.GetFileSystemInfos() 
                 }
             );
 
@@ -196,12 +196,12 @@ namespace Task_1
 
                             using (FileStream fs = new FileStream(fileSystemInfo.FullName, FileMode.Open, FileAccess.Read)) // создание переменной 
                             {
-                                using (StreamReader sr = new StreamReader(fs))
+                                using (StreamReader sr = new StreamReader(fs)) // читаем тексты с файла
                                 {
                                     Console.BackgroundColor = ConsoleColor.White; // белый цвет как в блокноте  
                                     Console.Clear(); // очищение консоли  
 
-                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.ForegroundColor = ConsoleColor.Black; // делаем названия черными
 
                                     Console.WriteLine(sr.ReadToEnd()); // вывести весь текст 
                                 }
@@ -219,10 +219,10 @@ namespace Task_1
 
                         else
                         {
-                            Console.BackgroundColor = ConsoleColor.Black; // сделать черным 
+                            Console.BackgroundColor = ConsoleColor.Black; // сделать черный фон
                             Console.Clear(); // очистить 
 
-                            Console.ForegroundColor = ConsoleColor.White; // покрасить в белое 
+                            Console.ForegroundColor = ConsoleColor.White; // покрасить в белое названия
 
                             viewMode = ViewMode.ShowDirContent; // режим просмотра директории 
                         }

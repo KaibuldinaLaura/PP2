@@ -8,9 +8,9 @@ namespace Task_3
 {
     class Program
     {
-        static void output(int b)
+        static void output(int b) //function, that output array with dublicated elements
         {
-            Console.Write(b + " " + b + " ");
+            Console.Write(b + " " + b + " "); //output eah element twice
         }
         static void Main(string[] args)
         {
@@ -20,9 +20,9 @@ namespace Task_3
             {
                 a[i] = Int32.Parse(Console.ReadLine()); //input numbers (array)
             }
-            foreach (int number in a)
+            foreach (int number in a) //running over each element
             {
-                output(number);
+                output(number); //output new array by using our function
             }
         }
     }

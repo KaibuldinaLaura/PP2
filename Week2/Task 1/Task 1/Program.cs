@@ -33,7 +33,7 @@ namespace Task_4
 
         static void Main(string[] args)
         {
-            FileStream fs = new FileStream(@"C:\Users\Laura\source\ex1.txt", FileMode.Open, FileAccess.Read); //open file
+            FileStream fs = new FileStream(@"C:\Users\Laura\source\repos\ex1.txt", FileMode.Open, FileAccess.Read); //open file
             StreamReader sr = new StreamReader(fs); 
             string line = sr.ReadLine(); //read text from file
             Solve(line); //checking pollindrome or not

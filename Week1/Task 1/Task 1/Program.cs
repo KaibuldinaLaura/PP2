@@ -8,12 +8,12 @@ namespace Task_1
 {
     class Program
     {
-        static bool isprime(int n) //making a function that finds only prime numbers
+        static bool isprime(int n) //making a boolean function that finds only prime numbers
         {
             if (n == 1) return false; //because 1 isn't prime number
             for (int d = 2; d * d <= n; d++)
             {
-                if (n % d == 0) return false; 
+                if (n % d == 0) return false; //because n can be divided by them and 1
             }
             return true; //because in other cases it will be prime number
         }
