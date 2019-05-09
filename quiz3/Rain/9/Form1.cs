@@ -18,7 +18,6 @@ namespace _9
             g = CreateGraphics();
         }
         Graphics g;
-        int dir;
         Pen pen;
         List<Rectangle> recs = new List<Rectangle>();
         List<int> directions = new List<int>();
@@ -37,9 +36,7 @@ namespace _9
             x.Add(e.Location.X);
             y.Add(e.Location.Y);
 
-            Random randirec = new Random();
-            dir = randirec.Next(1, 4);
-            directions.Add(dir);
+            directions.Add(1);
 
             Random randRGB = new Random();
             Color randomColor = Color.FromArgb(randRGB.Next(256), randRGB.Next(256), randRGB.Next(256));
@@ -51,20 +48,10 @@ namespace _9
             for (int i = 0; i < x.Count; i++)
             {
                 if (directions[i] == 1)
-                    y[i] -= 10;
-                else
-                if (directions[i] == 2)
                     y[i] += 10;
-                else
-                if (directions[i] == 3)
-                    x[i] -= 10;
-                else
-                if (directions[i] == 4)
-                    x[i] += 10;
 
                 Refresh();
             }
-
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -74,7 +61,6 @@ namespace _9
                 pen = new Pen(colors[i]);
                 e.Graphics.FillEllipse(pen.Brush, x[i], y[i], 27, 27);
             }
-
         }
     }
 }
